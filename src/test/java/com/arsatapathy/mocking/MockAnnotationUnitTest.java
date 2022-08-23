@@ -1,4 +1,4 @@
-package mocking.com.arsatapathy;
+package com.arsatapathy.mocking;
 
 import com.arsatapathy.mocktest.Customer;
 import org.junit.Assert;
