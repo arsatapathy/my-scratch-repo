@@ -19,6 +19,7 @@
         <mocikto.core.version>4.6.1</mocikto.core.version>
         <google.gson.version>2.5</google.gson.version>
         <google.guice.version>5.1.0</google.guice.version>
+        <lombok.version>1.18.24</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -43,6 +44,11 @@
                 <artifactId>guice</artifactId>
                 <version>${google.guice.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -64,6 +70,10 @@
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 
