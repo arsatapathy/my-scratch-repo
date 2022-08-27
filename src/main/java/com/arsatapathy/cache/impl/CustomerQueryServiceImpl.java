@@ -1,21 +1,17 @@
 package com.arsatapathy.cache.impl;
 
-import com.arsatapathy.cache.model.Customer;
 import com.arsatapathy.cache.api.CustomerQueryService;
+import com.arsatapathy.cache.model.Customer;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.inject.Singleton;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@Singleton
 public class CustomerQueryServiceImpl implements CustomerQueryService {
     private final Map<String, Customer> customerCache;
 
-    @Inject
-    public CustomerQueryServiceImpl(@Named("cache") Map<String, Customer> customerCache) {
-        this.customerCache = customerCache;
+    public CustomerQueryServiceImpl() {
+        customerCache = new HashMap<>();
     }
 
     @Override
