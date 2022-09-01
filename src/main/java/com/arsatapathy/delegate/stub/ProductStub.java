@@ -10,11 +10,11 @@ public class ProductStub {
 
     public ProductStub() {
         products = Map.of(
-               "1", Product.builder().id("1").name("P1").build(),
-                "2", Product.builder().id("2").name("P2").build(),
-                "3", Product.builder().id("3").name("P3").build(),
-                "4", Product.builder().id("4").name("P4").build(),
-                "5", Product.builder().id("5").name("P5").build()
+               "1", Product.builder().serialNumber("1").name("P1").build(),
+                "2", Product.builder().serialNumber("2").name("P2").build(),
+                "3", Product.builder().serialNumber("3").name("P3").build(),
+                "4", Product.builder().serialNumber("4").name("P4").build(),
+                "5", Product.builder().serialNumber("5").name("P5").build()
         );
     }
 
