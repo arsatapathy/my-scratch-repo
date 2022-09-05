@@ -16,19 +16,21 @@ public class JsonSchemaTest {
         SchemaGenerator generator = new SchemaGenerator(config);
         JsonNode customerSchema = generator.generateSchema(Customer.class);
         JsonNode productSchema = generator.generateSchema(Product.class);
+        JsonNode studentSchema = generator.generateSchema(Student.class);
 
         System.out.println(customerSchema.toPrettyString());
         System.out.println(productSchema.toPrettyString());
 
         JSONObject customerJsonObject = new JSONObject(customerSchema.toString());
         JSONObject productJsonObject = new JSONObject(productSchema.toString());
+        JSONObject studentJsonObject = new JSONObject(studentSchema.toString());
 
         System.out.println(customerJsonObject);
         System.out.println(productJsonObject);
 
         Customer customer = Customer.builder().id("1").name("ashish").build();
         Product product = Product.builder().serialNumber("1").name("xyz").build();
-        Student student = Student.builder().id(1).address("xyz").build();
+        Student student = Student.builder().id(1).name("ashish").address("xyz").build();
 
         JSONObject customerJson = new JSONObject(customer);
         JSONObject productJson = new JSONObject(product);
@@ -36,26 +38,42 @@ public class JsonSchemaTest {
 
         System.out.println(customerJson);
         System.out.println(productJson);
+        System.out.println(studentJson);
 
-        Schema schema = SchemaLoader.builder()
+        Schema schemaCustomer = SchemaLoader.builder()
                 .useDefaults(true)
                 .schemaJson(customerJsonObject)
                 .build().load().build();
 
+        Schema schemaStudent = SchemaLoader.builder()
+                .useDefaults(true)
+                .schemaJson(studentJsonObject)
+                .build().load().build();
+
         try {
-            schema.validate(customerJson);
+            schemaCustomer.validate(customerJson);
+            System.out.println("success");
         } catch (ValidationException e) {
             e.printStackTrace();
         }
 
         try {
-            schema.validate(productJson);
+            schemaCustomer.validate(productJson);
+            System.out.println("success");
         } catch (ValidationException e) {
             e.printStackTrace();
         }
 
         try {
-            schema.validate(studentJson);
+            schemaCustomer.validate(studentJson);
+            System.out.println("success");
+        } catch (ValidationException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            schemaStudent.validate(studentJson);
+            System.out.println("success");
         } catch (ValidationException e) {
             e.printStackTrace();
         }
