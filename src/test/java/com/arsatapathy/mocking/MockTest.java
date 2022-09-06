@@ -4,6 +4,8 @@ import com.arsatapathy.mocktest.Customer;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Objects;
+
 import static org.mockito.Mockito.*;
 
 public class MockTest {
