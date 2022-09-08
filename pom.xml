@@ -23,6 +23,7 @@
         <victools.version>4.26.0</victools.version>
         <org.json>20220320</org.json>
         <org.everit.json.version>1.12.1</org.everit.json.version>
+        <resilience4j.timelimiter.version>1.7.1</resilience4j.timelimiter.version>
     </properties>
 
     <dependencyManagement>
@@ -67,6 +68,11 @@
                 <artifactId>everit-json-schema</artifactId>
                 <version>${org.everit.json.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-timelimiter</artifactId>
+                <version>${resilience4j.timelimiter.versio}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -108,7 +114,6 @@
         <dependency>
             <groupId>io.github.resilience4j</groupId>
             <artifactId>resilience4j-timelimiter</artifactId>
-            <version>1.7.1</version>
         </dependency>
     </dependencies>
 
